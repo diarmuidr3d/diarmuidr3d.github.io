@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cart "http://diarmuidr3d.github.io/cartCoord/ontology#" >
+    <!ENTITY dce "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+]>
+
+
+<rdf:RDF xmlns="&cart;"
+     xml:base="&cart;"
+     xmlns:rdfs="&rdfs;"
+     xmlns:owl="&owl;"
+     xmlns:xsd="&xsd;"
+     xmlns:rdf="&rdf;"
+     xmlns:dce="&dce;"
+     xmlns:geo="&geo;">
+
+    <owl:Ontology rdf:about="&cart;">
+        <dce:language>en</dce:language>
+        <dce:creator>Diarmuid Ryan</dce:creator>
+        <dce:description>Ontology for representation of cartesian co-ordinates</dce:description>
+        <rdfs:comment>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+        				http://creativecommons.org/licenses/by-sa/4.0/</rdfs:comment>
+        <dce:title>cartCoordOnt</dce:title>
+        <rdfs:comment>Date Created: 3/7/15. Last Modified: 3/7/15.</rdfs:comment>
+    </owl:Ontology>
+
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	<!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="&dce;creator"/>
+    
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="&dce;description"/>
+
+
+	<!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:AnnotationProperty rdf:about="&dce;language"/> 
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="&dce;title"/>
+
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	<owl:ObjectProperty rdf:about="&cart;hasPoint">
+		<rdfs:label>has Point</rdfs:label>
+		<rdfs:domain rdf:resource="&cart;Point_List"/>
+		<rdfs:range rdf:resource="&cart;Point"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cart;hasPlacement">
+		<rdfs:label>has Point</rdfs:label>
+		<rdfs:range rdf:resource="&geo;SpatialThing"/>
+	</owl:ObjectProperty>
+	
+	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+     <owl:DatatypeProperty rdf:about="&cart;zcoord">
+     	<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+     	<rdfs:label>Z Coordinate</rdfs:label>
+     	<rdfs:domain rdf:resource="&cart;Point" />
+		<rdfs:range rdf:resource="&xsd;double"/>
+     </owl:DatatypeProperty>
+     
+     <owl:DatatypeProperty rdf:about="&cart;ycoord">
+     	<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+     	<rdfs:label>Y Coordinate</rdfs:label>
+     	<rdfs:domain rdf:resource="&cart;Point" />
+		<rdfs:range rdf:resource="&xsd;double"/>
+     </owl:DatatypeProperty>
+     
+     <owl:DatatypeProperty rdf:about="&cart;xcoord">
+     	<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+     	<rdfs:label>X Coordinate</rdfs:label>
+     	<rdfs:domain rdf:resource="&cart;Point" />
+		<rdfs:range rdf:resource="&xsd;double"/>
+     </owl:DatatypeProperty>
+     
+     <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+     <owl:Class rdf:about="&cart;Point">
+     	<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+     </owl:Class>
+     
+     <owl:Class rdf:about="&cart;Point_List">
+     	<rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+     </owl:Class>
+
+</rdf:RDF>
