@@ -10,6 +10,7 @@
     <!ENTITY dce "http://purl.org/dc/elements/1.1/" >
     <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#" >
     <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY cc "http://creativecommons.org/ns#" >
 ]>
 
 
@@ -22,6 +23,7 @@
      xmlns:dce="&dce;"
      xmlns:geo="&geo;"
      xmlns:vann="&vann;"
+     xmlns:cc="&cc;"
 >
 
     <owl:Ontology rdf:about="&cart;">
