@@ -9,6 +9,7 @@
     <!ENTITY cart "http://purl.org/net/cartCoord#" >
     <!ENTITY dce "http://purl.org/dc/elements/1.1/" >
     <!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
 ]>
 
 
@@ -19,16 +20,24 @@
      xmlns:xsd="&xsd;"
      xmlns:rdf="&rdf;"
      xmlns:dce="&dce;"
-     xmlns:geo="&geo;">
+     xmlns:geo="&geo;"
+     xmlns:vann="&vann;"
+>
 
     <owl:Ontology rdf:about="&cart;">
         <dce:language>en</dce:language>
+	<vann:preferredNamespacePrefix>cart</vann:preferredNamespacePrefix>
+	<vann:preferredNamespaceUri>http://purl.org/net/cartCoord#</vann:preferredNamespaceUri> 
+	<dce:title>Cartesian Coordinate Ontology</dce:title>
         <dce:creator>Diarmuid Ryan</dce:creator>
         <dce:description>Ontology for representation of cartesian co-ordinates</dce:description>
-        <rdfs:comment>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-        				http://creativecommons.org/licenses/by-sa/4.0/</rdfs:comment>
+        <rdfs:comment>Documentation at http://diarmuidr3d.github.io/cartCoord/</rdfs:comment>
         <dce:title>cartCoordOnt</dce:title>
-        <rdfs:comment>Date Created: 3/7/15. Last Modified: 3/7/15.</rdfs:comment>
+	<dce:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-03</dce:issued>
+	<dce:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-08</dce:modified>
+ 	<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
+	<rdfs:comment>-Version 0.2: Improved metadata</rdfs:comment>
+	<cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/> 
     </owl:Ontology>
 
 	<!-- 
