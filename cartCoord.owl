@@ -34,7 +34,7 @@
         <dce:creator>Diarmuid Ryan</dce:creator>
         <dce:description>Ontology for representation of cartesian co-ordinates</dce:description>
         <rdfs:comment>Documentation at http://diarmuidr3d.github.io/cartCoord/</rdfs:comment>
-        <dce:title>cartCoordOnt</dce:title>
+        <dce:title>Cartesian Coordinate Ontology</dce:title>
 	<dce:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-03</dce:issued>
 	<dce:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-08</dce:modified>
  	<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
