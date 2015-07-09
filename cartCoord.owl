@@ -38,7 +38,7 @@
 	<dce:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-03</dce:issued>
 	<dce:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-08</dce:modified>
  	<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
-	<rdfs:comment>-Version 0.2: Improved metadata</rdfs:comment>
+	<rdfs:comment>-Version 0.21: Fixed title and hasPlacement label</rdfs:comment>
 	<cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/> 
     </owl:Ontology>
 
@@ -84,7 +84,7 @@
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&cart;hasPlacement">
-		<rdfs:label>has Point</rdfs:label>
+		<rdfs:label>has Placement</rdfs:label>
 		<rdfs:range rdf:resource="&geo;SpatialThing"/>
 	</owl:ObjectProperty>
 	
