@@ -1,9 +1,10 @@
-@prefix rucd: <http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#> .
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rucd: <http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#> .
 @base <http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl> .
 
 <http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl> rdf:type owl:Ontology ;
@@ -15,12 +16,54 @@
 
 #################################################################
 #
+#    Data properties
+#
+#################################################################
+
+
+###  http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#firstName
+
+rucd:firstName rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf <http://swrc.ontoware.org/ontology#name> .
+
+
+
+###  http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#lastName
+
+rucd:lastName rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf <http://swrc.ontoware.org/ontology#name> .
+
+
+
+###  http://swrc.ontoware.org/ontology#name
+
+<http://swrc.ontoware.org/ontology#name> rdfs:domain <http://swrc.ontoware.org/ontology#Person> ;
+                                         
+                                         rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
 #    Classes
 #
 #################################################################
 
 
-###  http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#College
+###  http://swrc.ontoware.org/ontology#University
+
+<http://swrc.ontoware.org/ontology#University> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://swrc.ontoware.org/ontology#hasParts> ;
+                                                                 owl:someValuesFrom :College
+                                                               ] .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#College
 
 :College rdf:type owl:Class ;
          
@@ -32,20 +75,11 @@
 
 
 
-###  http://diarmuidr3d.github.io/swrc_ont/swrc_UCD.owl#School
+###  http://www.semanticweb.org/owl/owlapi/turtle#School
 
 :School rdf:type owl:Class ;
         
         rdfs:subClassOf <http://swrc.ontoware.org/ontology#Organization> .
-
-
-
-###  http://swrc.ontoware.org/ontology#University
-
-<http://swrc.ontoware.org/ontology#University> rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty <http://swrc.ontoware.org/ontology#hasParts> ;
-                                                                 owl:someValuesFrom :College
-                                                               ] .
 
 
 
